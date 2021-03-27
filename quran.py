@@ -328,13 +328,13 @@ class Quran(commands.Cog):
             await ctx.author.voice.channel.connect()
 
     # Leave empty voice channels to conserve bandwidth.
-    @commands.Cog.listener()
-    async def on_voice_state_update(self, _, before, after):
-        if after.channel is None:
-            if len(before.channel.members) == 1 and self.bot.user in before.channel.members:
-                voice_client = discord.utils.get(self.bot.voice_clients, guild=before.channel.guild)
-                if voice_client is not None:
-                    await voice_client.disconnect()
+    #@commands.Cog.listener()
+    #async def on_voice_state_update(self, _, before, after):
+        #if after.channel is None:
+            #if len(before.channel.members) == 1 and self.bot.user in before.channel.members:
+                #voice_client = discord.utils.get(self.bot.voice_clients, guild=before.channel.guild)
+                #if voice_client is not None:
+                    #await voice_client.disconnect()
 
 
 def setup(bot):
